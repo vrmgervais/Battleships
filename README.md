@@ -1,0 +1,23 @@
+# Battleships: Deep Strike (Godot 4.7.2)
+
+Top-down Battleships, you vs. the computer. Everything (graphics, animation, sound) is generated in code, so there are no asset files.
+
+## Run
+1. Open Godot 4.7.2, click **Import**, pick `project.godot`.
+2. Press **F5**.
+
+(First open lets Godot register the `class_name` scripts; if you see "identifier not declared" errors, reload the project once.)
+
+## How to play
+- **Placement:** click to place the highlighted ship, **R** / right-click rotates, **Random** auto-places, **Undo** removes the last ship, then **START**.
+- **Battle:** click a tile on *Enemy Waters*. Neither side can see the other's ships; the enemy layout is re-randomised every game.
+- **Modern twist (costs your turn):**
+  - **Sonar [2]** x2 - scan a 3x3 zone; it reports how many unrevealed ship tiles are inside.
+  - **Airstrike [3]** x1 - bombs a plus-shaped area of 5 tiles.
+  - The enemy has the same gear. Its sonar scans show on your board in red.
+- Keys: `1` Fire, `2` Sonar, `3` Airstrike, right-click or `Esc` cancels, `Esc` opens the menu.
+- **Graphics:** *Classic tabletop* (wood board, plastic ships, pegs) or *Modern radar* (neon sweep, glowing hulls). Switch any time with the top-right button.
+- **Difficulty:** Rookie (random + follow-ups), Officer (hunt/target with line-extension), Admiral (probability-density hunter that uses sonar clues).
+
+## Files
+- `main.gd` game flow + UI, `board.gd` board rendering/animation, `fleet.gd` rules, `enemy_ai.gd` opponent, `sfx.gd` synthesised sounds.
